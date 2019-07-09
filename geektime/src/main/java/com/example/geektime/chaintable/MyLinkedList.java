@@ -42,18 +42,13 @@ public class MyLinkedList {
      */
     public int get(int index) {
 
-
-        if (index<0 || index>size-1) {
+        if (index<0 || index>=size) {
             return -1;
         }
-        int check = 0;
         Node temp = head.next;
-
-        while (check < index) {
+        for (int i = 0; i <index ; i++) {
             temp = temp.next;
-            check++;
         }
-
 
         return temp.data;
 
@@ -86,14 +81,11 @@ public class MyLinkedList {
      * Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
      */
     public void addAtIndex(int index, int val) {
-        if (index>getLength()){
+        if (index>size){
             return;
         }
         Node temp = head;
-
-        int cIndex = 0;
-        while (cIndex<index){
-            cIndex++;
+        for (int i = 0; i <index ; i++) {
             temp = temp.next;
         }
         Node newNode = new Node(val);
@@ -106,19 +98,34 @@ public class MyLinkedList {
      * Delete the index-th node in the linked list, if the index is valid.
      */
     public void deleteAtIndex(int index) {
-        if (index>getLength()-1 || index<0){
+        if (index>=size || index<0){
             return;
         }
         Node temp = head;
-
-        int cIndex = 0;
-        while (cIndex<index){
-            cIndex++;
+        for (int i = 0; i <index ; i++) {
             temp = temp.next;
         }
         Node q = temp.next;
         temp.next = q.next;
         q = null;
         size--;
+    }
+
+    public boolean hasCycle(Node head) {
+        if (head!=null){
+            Node slow = head;
+            Node fast = head;
+            while (fast.next != null && slow.next!=null){
+                slow = slow.next;
+                if (fast.next.next!=null){
+                    fast = fast.next.next;
+                }
+                if (slow == fast){
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
 }
