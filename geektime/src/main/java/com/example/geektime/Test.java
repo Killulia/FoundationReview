@@ -6,6 +6,7 @@ import com.example.geektime.chaintable.Node;
 import com.example.geektime.proxy.ClassA;
 import com.example.geektime.proxy.ClassAProxy;
 import com.example.geektime.proxy.FuncInterface;
+import com.example.geektime.recursion.Solution;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -15,16 +16,9 @@ public class Test {
     public static final String TAG = "ccg";
     static Node head = new Node(0);
     private int length;
+    private static String reverse = "abcdefg";
     public static void main(String[] args){
-
-        MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addAtHead(1);
-        myLinkedList.addAtHead(2);
-        myLinkedList.addAtHead(3);
-        myLinkedList.addAtHead(4);
-        myLinkedList.addAtHead(5);
-        myLinkedList.printNode();
-//        System.out.println("data:"+data+","+data2+","+data3);
+        Solution.reverseString(reverse.toCharArray());
 
     }
 

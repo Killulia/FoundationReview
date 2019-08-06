@@ -3,7 +3,6 @@ package com.example.foundationreview.chain;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
 import com.example.foundationreview.R;
 import com.example.geektime.chaintable.Node;
 
@@ -15,20 +14,6 @@ public class ChainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addNode(1);
-        addNode(3);
-        addNode(2);
-        addNode(4);
-//        addIndexNode(4,1);
-//        addIndexNode(-1,0);
-//        addIndexNode(-1,-2);
-//        addIndexNode(-1,6);
-//        deleteNode(0);
-//        deleteNode(3);
-        reverse();
-        printNode();
-        length = getLength();
-//        Log.d(TAG, "length: "+length);
 
     }
 

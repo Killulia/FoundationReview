@@ -1,1 +1,1 @@
-include ':app', ':geektime'
+include ':app', ':geektime', ':pattern'
