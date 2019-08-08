@@ -6,7 +6,7 @@ public class Singleton {
 
     private Singleton() { }
 
-    public static Singleton getInstance(){
+    static Singleton getInstance(){
         if (instance == null) {
             instance = new Singleton();
         }
