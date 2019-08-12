@@ -1,4 +1,4 @@
-package com.example.pattern;
+package com.example.pattern.singleInstance;
 
 public class Singleton {
 
@@ -6,7 +6,7 @@ public class Singleton {
 
     private Singleton() { }
 
-    static Singleton getInstance(){
+    public static Singleton getInstance(){
         if (instance == null) {
             instance = new Singleton();
         }
