@@ -1,1 +1,1 @@
-include ':app', ':geektime', ':pattern'
+include ':app', ':geektime', ':pattern', ':leetcode'
