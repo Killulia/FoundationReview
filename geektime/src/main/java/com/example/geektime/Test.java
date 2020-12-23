@@ -20,7 +20,7 @@ public class Test {
     static int nodes[] = {1, 2, 3, 4, 5};
     public static void main(String[] args){
         Solution.reverseString(reverse.toCharArray());
-        buildNodes(nodes);
+        System.out.println("linked head next:"+new MyLinkedList().head.next);
 
     }
 
