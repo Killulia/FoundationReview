@@ -17,10 +17,21 @@ public class Test {
     static Node head = new Node(0);
     private int length;
     private static String reverse = "abcdefg";
+    static int nodes[] = {1, 2, 3, 4, 5};
     public static void main(String[] args){
         Solution.reverseString(reverse.toCharArray());
+        buildNodes(nodes);
 
     }
+
+    public static void buildNodes(int[] args) {
+        for (int node : nodes) {
+            addNode(node);
+        }
+        deleteNode(1);
+        printNode();
+    }
+
 
     /**
      *     动态代理
