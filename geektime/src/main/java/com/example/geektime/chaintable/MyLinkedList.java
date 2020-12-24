@@ -155,18 +155,34 @@ public class MyLinkedList {
 
     }
 
+    /*
+    找到入环的第一个节点
+     */
     public Node detectCycle(Node head) {
         if (head != null) {
-            int step = 0;
-            Node slow = head, fast = head;
-            while (fast.next != null && fast.next.next != null) {
+            Node slow, fast;
+            slow = head;
+            fast = head;
+            while (true) {
+                if ((fast== null || fast.next == null)){
+                    return null;
+                }
                 slow = slow.next;
                 fast = fast.next.next;
 
-                if (slow == fast)
-                    return getNode(size - step);
+                if (slow == fast) {
+                    break;
+                }
+
             }
+            fast = head;
+            while (fast != slow) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return fast;
         }
+
         return null;
 
     }
@@ -216,7 +232,7 @@ public class MyLinkedList {
     public Node removeNthFromEnd(Node head, int n) {
         Node dummy = new Node(0);
         dummy.next = head;
-        int length  = 0;
+        int length = 0;
         Node first = head;
         while (first != null) {
             length++;
@@ -233,4 +249,11 @@ public class MyLinkedList {
 
 
     }
+
+
+
+    /*
+    环形链表 II leetcode
+     */
+
 }

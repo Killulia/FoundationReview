@@ -11,5 +11,6 @@ public class Test {
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(Solution.twoSum(array, 9)));
         System.out.println(com.example.leetcode.array.Solution.pivotIndex(pivotIndex));
+
     }
 }

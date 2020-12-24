@@ -17,10 +17,15 @@ public class Test {
     static Node head = new Node(0);
     private int length;
     private static String reverse = "abcdefg";
-    static int nodes[] = {1, 2, 3, 4, 5};
+    static int nodes[] = {3,2,0,4};
     public static void main(String[] args){
         Solution.reverseString(reverse.toCharArray());
-        System.out.println("linked head next:"+new MyLinkedList().head.next);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtTail(3);
+        myLinkedList.addAtTail(2);
+        myLinkedList.addAtTail(0);
+        myLinkedList.addAtTail(4);
+        myLinkedList.printNode();
 
     }
 
