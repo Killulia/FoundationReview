@@ -110,34 +110,40 @@ public class MyLinkedList {
      * Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
      */
     public void addAtIndex(int index, int val) {
-        if (index > size) {
+        if (index > size){
             return;
         }
         Node temp = head;
-        for (int i = 0; i < index; i++) {
+        int cur = 0;
+        while (cur < index){
+            cur ++;
             temp = temp.next;
         }
-        Node newNode = new Node(val);
-        newNode.next = temp.next;
-        temp.next = newNode;
-        size++;
+        Node node = new Node(val);
+        node.next = temp.next;
+        temp.next = node;
+        size ++ ;
+
     }
 
     /**
      * Delete the index-th node in the linked list, if the index is valid.
      */
     public void deleteAtIndex(int index) {
-        if (index >= size || index < 0) {
-            return;
-        }
-        Node temp = head;
-        for (int i = 0; i < index; i++) {
+      if (index >= size || index < 0){
+          return;
+      }
+      Node temp = head;
+        int cur = 0;
+        while (cur < index){
+            cur ++;
             temp = temp.next;
         }
-        Node q = temp.next;
-        temp.next = q.next;
-        q = null;
+        Node p = temp.next;
+        temp.next = p.next;
+        p = null;
         size--;
+
     }
 
     public boolean hasCycle(Node head) {

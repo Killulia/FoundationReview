@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Solution {
 
     /*
-    1. 两数之和 {2,7,11,15}
+    1. 两数之和 {2,7,7,15} target 9
      */
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
