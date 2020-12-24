@@ -1,6 +1,8 @@
 package com.example.leetcode.array;
 
+import java.lang.reflect.Array;
 import java.text.NumberFormat;
+import java.util.Arrays;
 
 public class Solution {
 
@@ -12,8 +14,9 @@ public class Solution {
         //-1,-1,0,0,-1,-1    2
         //[-1,-1,-1,0,1,1]   0
         //1, 7, 3, 6, 5, 6   3
+        //0, -1, 1, 0, 0, 0   3
         int left = 0, right, sum = 0;
-        int result = -1;
+//        int result = -1;
         for (int num : nums) {
             sum += num;
         }
@@ -21,13 +24,12 @@ public class Solution {
             if (i != 0) {
                 left += nums[i - 1];
             }
-            right = sum - left - nums[i];
-            if (left == right) {
-                result = i;
-                break;
+//            right = sum - left - nums[i];
+            if (left == sum - left - nums[i]) {
+                return i;
             }
         }
-        return result;
+        return -1;
     }
 
     /*
