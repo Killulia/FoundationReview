@@ -20,21 +20,22 @@ public class Test {
     static int nodes[] = {3,2,0,4};
     public static void main(String[] args){
         Solution.reverseString(reverse.toCharArray());
-        MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addAtTail(3);
-        myLinkedList.addAtTail(2);
-        myLinkedList.addAtTail(0);
-        myLinkedList.addAtTail(4);
-        myLinkedList.printNode();
+
 
     }
 
-    public static void buildNodes(int[] args) {
-        for (int node : nodes) {
-            addNode(node);
+    /**
+     * LC 相交链表
+     */
+    public Node getIntersectionNode(Node headA, Node headB) {
+        if (headA == null || headB == null) return null;
+        Node pA = headA, pB = headB;
+        while (pA != pB) {
+            pA = pA.next == null ? headB : pA.next;
+            pB = pA.next == null ? headA : pB.next;
         }
-        deleteNode(1);
-        printNode();
+        return pA;
+
     }
 
 
@@ -144,16 +145,19 @@ public class Test {
     }
 
     /**
-     * 反转链表
+     * 206 反转链表
      */
-    public static void reverse(){
-        Node temp = head.next;
-        Node current = temp.next;
-        while (current!=null){
-            temp.next = current.next;
-            current.next = head.next;
-            head.next = current;
-            current = temp.next;
+    public static Node reverse(Node head){
+
+        Node pre =null;
+        Node cur =head;
+        Node temp = null;
+        while (cur!=null){
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
         }
+        return cur;
     }
 }
