@@ -298,7 +298,17 @@ public class MyLinkedList {
     反转链表 leetcode-206
      */
     public Node reverseList(Node head){
+        Node prev = null;
+        Node cur = head;
+        Node temp = head.next;
+        while (temp!=null){
+            prev = cur.next;
+            prev = cur;
+            cur = temp;
+            temp = temp.next;
+        }
 
+        return cur;
     }
 
 
