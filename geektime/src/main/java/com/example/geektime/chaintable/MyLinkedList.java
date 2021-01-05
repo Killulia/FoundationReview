@@ -294,6 +294,13 @@ public class MyLinkedList {
 
     }
 
+    /*
+    反转链表 leetcode-206
+     */
+    public Node reverseList(Node head){
+
+    }
+
 
 
 
