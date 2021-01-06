@@ -23,11 +23,12 @@ public class Test {
 //        Solution.reverseString(reverse.toCharArray());
         Node node1 = new Node(1);
         Node node2 = new Node(2);
-        Node node3 = new Node(3);
+//        Node node3 = new Node(3);
         node1.next = node2;
-        node2.next = node3;
-        Node p = reverseList(node1);
-        printNode(p);
+//        node2.next = node3;
+//        node3.next = node2;
+        boolean result = hasCycle(node1);
+        System.out.println(result);
 
     }
 
@@ -197,5 +198,20 @@ public class Test {
         }
 
         return prev;
+    }
+
+    /*
+    环形链表 leetcode-141
+     */
+    public static boolean hasCycle(Node head){
+        Node slow = head;
+        Node quick = head;
+        while (slow!=null && quick!=null && quick.next!=null){
+            slow = slow.next;
+            quick = quick.next.next;
+            if (slow == quick)
+                return true;
+        }
+        return false;
     }
 }
